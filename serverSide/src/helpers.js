@@ -14,7 +14,7 @@ const checkToken = async (req , res , next) => {
     let token = req.body.token
 
     if (token) {
-       let changedtoken = aes.decrypt(token, CYPHER.toString()).toString(utf8)
+        let changedtoken = aes.decrypt(token, CYPHER.toString()).toString(utf8)
         let email = changedtoken.split('|')[0]
         let expiredDate = changedtoken.split('|')[1]    
         if (expiredDate <= new Date().valueOf()) {
@@ -22,10 +22,10 @@ const checkToken = async (req , res , next) => {
         } else {
             let user = await User.findOne({ email})
             if (user){
-            req.currentUser = user
-            delete req.body.token        
-            next()
-        }
+                req.currentUser = user
+                delete req.body.token        
+                next()
+            }
         }
     } else {
         res.json(sendError('no-token-sent'))

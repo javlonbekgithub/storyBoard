@@ -7,7 +7,8 @@ import { observer } from 'mobx-react'
 import { User, setUser } from '../../store'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
-import { validate } from '../../helpers'
+import { getToken, validate } from '../../helpers'
+import { Api } from '../../api'
 
 // const avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe1_faOSmA1eOI05HbHvxl-uG8LPJaWb7zP3Kd8dMGurQcNpd_&s'
 
@@ -17,6 +18,17 @@ export const Dashboard = observer (() => {
     //     // setUser()
     // }, [])
 
+    const onSubmit = async values => {
+        values.token = getToken()
+        try {
+            const updateUserRes = await Api('user/update', values, 'post')
+            console.log(updateUserRes)
+        } catch (err) {
+            console.log('errra', err)
+        }
+
+    }
+
     const formik = useFormik({
         initialValues: {
             name: User.name,
@@ -24,9 +36,7 @@ export const Dashboard = observer (() => {
             newPassword: '',
             confirmPassword: ''
         },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        },
+        onSubmit,
         validate
     })
 
@@ -103,8 +113,11 @@ export const Dashboard = observer (() => {
                         className = 'authinput'
                         value = {formik.values.confirmPassword}
                     />
+                    <div className = {styles.formError}>{formik.errors.oldPasswordIsEmpty}</div>
+                    <div className = {styles.formError}>{formik.errors.fillFields}</div>
+                    <div className = {styles.formError}>{formik.errors.passwordsDontMatches}</div>
                     <Button
-                        // onClick = {this.handleEdit}
+                        onClick = {formik.handleSubmit}
                         title = 'Edit'
                         className = 'sbscrb'
                     />

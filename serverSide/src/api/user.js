@@ -4,7 +4,7 @@ const { checkToken } = require('../helpers')
 
 let user = Router()
 
-user.post('/', checkToken , async ( req, res ) => {
+user.post('/', checkToken , async(req, res) => {
     const { name , stories , avatar , _id , email} = req.currentUser
     let options = {
         path : 'stories',
@@ -19,6 +19,12 @@ user.post('/', checkToken , async ( req, res ) => {
         Stories,
      }
     res.json(user)
+})
+user.post('/update', checkToken, async(req, res) => {
+    const {name, oldPassword, newPassword, confirmPassword} = req.currentUser
+
+    console.log(req.currentUser)
+
 })
 
 

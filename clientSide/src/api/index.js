@@ -16,6 +16,7 @@ export const Api = (url, data = null, type = 'get') => {
         .then(res => {
             if(res.error) {
                 alert(res.error)
+                console.log(res)
                 console.log('asd')
                 if(res.error === 'invalid_token' || res.error === 'token_expired') {
                     setToken()   
