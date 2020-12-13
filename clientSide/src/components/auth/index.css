@@ -1,0 +1,46 @@
+
+.formbg {
+    position: absolute;
+    top: 25vh;
+    height: 60vh;
+    width: 20vw;
+    right: 0;
+    margin-right: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding: 15px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+    border-radius: 7px;
+    backdrop-filter: blur(3px);
+    /* transition: opacity 2s ease-in */
+}
+
+
+.animated {
+    transform-style: preserve-3d;
+    animation: rotat 0.5s ease-in-out;
+    color: transparent;
+    
+}
+@keyframes rotat {
+    0%{
+        opacity: 0;
+        transform: rotateY(0deg);
+    }
+    15%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotateY(360deg);
+    }
+}
+
+
+
+

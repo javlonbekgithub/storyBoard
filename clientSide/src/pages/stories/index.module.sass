@@ -1,0 +1,36 @@
+.cont
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: space-between
+    position: relative
+    animation: dash 1s ease-in
+    .h1 
+        position: absolute
+        top: 0
+    .list
+        overflow-y: scroll
+        height: 70%
+        top: 25%
+        width: 60%
+        position: relative
+    .categories
+        width: 30%
+        overflow-y: scroll
+        padding: 10px
+        p
+            padding: 5px
+            cursor: pointer
+            &:hover
+                background-color: tomato
+                color: white
+@keyframes open
+    0%
+        height: 50%
+    100%
+        height: 100%
+@keyframes dash
+    0%
+        width: 20%
+    100%
+        width: 100%

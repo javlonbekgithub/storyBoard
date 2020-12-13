@@ -1,0 +1,14 @@
+.fpbg {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.fpbg > * {
+    scroll-snap-align: start;
+}

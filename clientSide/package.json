@@ -1,0 +1,48 @@
+{
+  "homepage": "./",
+  "name": "button",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "formik": "^2.2.6",
+    "jodit-react": "^1.0.33",
+    "mobx": "^5.15.0",
+    "mobx-react": "^6.1.4",
+    "node-error-codes": "0.0.4",
+    "node-sass": "^4.13.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-icons": "^3.8.0",
+    "react-quill": "^1.3.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.1.0",
+    "react-summernote": "^2.0.0",
+    "sass": "^1.23.0",
+    "yarn": "^1.19.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "css-loader": "^3.2.0"
+  }
+}

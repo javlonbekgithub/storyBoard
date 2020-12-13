@@ -1,0 +1,40 @@
+.cont
+    width: max-content
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding-top: 50px
+    .panel
+        // position: fixed
+        position: absolute
+        display: flex
+        top: 0
+        z-index: 220
+        margin-bottom: 100px
+        width: max-content
+        height: 50px
+        div 
+            display: flex
+            flex-direction: column
+.setCover
+    width: 95vw
+    height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 33
+    background-color: rgba(0, 0, 0, 0.6)
+    .setCoverCont 
+        background-color: #fff
+        div
+            padding: 20px
+            input
+                display: none
+    .cover
+        object-fit: cover
+        width: 30vw
+        

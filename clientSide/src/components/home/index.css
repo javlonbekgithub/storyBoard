@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background {   
+    background-image: url('../../files/bbb.jpeg');
+    background-size: 100%;
+    filter: blur(0.8px);
+    width: 100%;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 95%);
+    background-color: rgb(218, 221, 218);
+    position: relative;
+    /* z-index: -1; */
+    animation: ani 3s;
+    animation-timing-function: ease-in;
+}
+@keyframes ani {
+    from {
+        background-size: 104%;
+        filter: blur(0px);
+    }
+    to {
+        background-size: 100%;
+        filter: blur(1px);
+    }
+}
+.back {
+    width: 98.8vw;
+    height: 100vh;
+    /* perspective: 1000px; */
+    position: relative;
+    perspective: 800px;
+    background-color: rgb(218, 221, 218);
+
+    /* overflow: hidden; */
+}
+
